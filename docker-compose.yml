@@ -1,0 +1,37 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=labexpressdb
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin@12345
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./labexpress:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_NAME=labexpressdb
+      - DATABASE_USER=admin
+      - DATABASE_PASSWD=admin@12345
+      - DATABASE_HOST=db
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@domain.com
+      - PGADMIN_DEFAULT_PASSWORD=admin@12345
+    ports:
+      - 5050:80
+    volumes:
+      - pgadmin:/srv/pgadmin
+volumes:
+  pgdata:
+  pgadmin:
