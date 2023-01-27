@@ -74,10 +74,20 @@ WSGI_APPLICATION = 'labexpress.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ['DATABASE_NAME'],
+        'USER':  os.environ['DATABASE_USER'],
+        'PASSWORD': os.environ['DATABASE_PASSWD'],
+        'HOST': os.environ['DATABASE_HOST'],
+        'PORT': '5432',
     }
+
+    #'default': {
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': BASE_DIR / 'db.sqlite3',
+    #}
 }
 
 
@@ -109,7 +119,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
