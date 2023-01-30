@@ -30,7 +30,7 @@ class Brand(models.Model):
     description = models.TextField(max_length=100, blank=False)
 
 class Product(models.Model): # Hace referencia al modelo del equipo
-    description = models.ForeignKey(Brand, on_delete=models.CASCADE)
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     description = models.TextField(max_length=100, blank=False)
 
 class Device(models.Model):

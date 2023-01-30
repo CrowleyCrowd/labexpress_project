@@ -1,0 +1,129 @@
+html{
+    position: relative;
+    min-height: 100%;
+}
+.navbar-menu {
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    width: 16.875rem;
+    max-width: 16.875rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 1002;
+    will-change: left, right;
+}
+.navbar-menu{
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+}
+.navbar-brand-box {
+    padding: 0 0.4rem;
+    text-align: center;
+    -webkit-transition: all .1s ease-out;
+    transition: all .1s ease-out;
+    height: 3.125rem;
+    display: -webkit-box;
+    border-bottom: 1px solid gray;
+}
+
+.nav-menu {
+    position: relative;
+    height: calc(100% - 6.9375rem) !important;
+}
+
+.nav-footer {
+    height: 2.8125rem;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.navbar-menu .nav-footer {
+    border-top: 1px solid gray;
+}
+
+.container {
+    margin-left: 280px;
+}
+/*
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+} */
+
+.background-main {
+    background-image: url("../../images/logo1.svg");
+}
+
+.background-main {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: calc(100% - 280px);
+    display: block;
+    top: 0;
+    left: 280px;
+    /* background-size: cover; */
+    background-position: 50%;
+    opacity: 0.5;
+    bottom: 0;
+    background-repeat: no-repeat;
+    margin: 0;
+}

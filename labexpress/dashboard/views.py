@@ -5,3 +5,15 @@ from django.http import HttpResponse
 
 def index(request):
     return render(request, 'dashboard/index.html')
+
+def users(request):
+    return render(request, 'dashboard/users.html')
+
+def customers(request):
+    return render(request, 'dashboard/customers.html')
+
+def repairs(request):
+    return render(request, 'dashboard/repairs.html')
+
+def devices(request):
+    return render(request, 'dashboard/devices.html')
