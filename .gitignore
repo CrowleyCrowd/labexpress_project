@@ -1,0 +1,15 @@
+# Archivos de configuración local
+*.env
+*.ini
+*.json
+
+# Archivos generados
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de virtualenv
+venv/
+*.venv
+.DS_Store
