@@ -17,3 +17,6 @@ def repairs(request):
 
 def devices(request):
     return render(request, 'dashboard/devices.html')
+
+def login(request):
+    return render(request, 'dashboard/login.html')
