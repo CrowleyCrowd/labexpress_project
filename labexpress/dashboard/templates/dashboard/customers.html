@@ -1,5 +1,19 @@
 {% extends "./base_index.html" %}
 
 {% block content %}
+
+<h1>Clientes</h1>
+
+{%  for customer in customers %}
+<div>
+  <h4>{{ customer.firstname }}</h4>
+</div>
+<button>Delet</button>
+<button>Update</button>
+
+{% endfor %}
+
+=======
 <H1>RESUMEN DE CLIENTES</H1>
+
 {% endblock %}

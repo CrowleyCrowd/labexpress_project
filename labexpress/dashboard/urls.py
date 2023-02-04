@@ -8,6 +8,15 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 
 urlpatterns = [
+
+    path('', views.index, name='index'),
+    path('users/', views.users, name='users'),
+    path('customers/', views.customers, name='customers'),
+    path('customers/creat/', views.creat_customer, name='creat_customers'),
+    path('devices/', views.devices, name='devices'),
+    path('repairs/', views.repairs, name='repairs')
+
+=======
     #path('login/', views.login, name='login'),
     path('repairs/', login_required(views.repairs), name='repairs'),
     path('devices/create_device', login_required(views.createDevices), name='create_new_device'),
@@ -17,4 +26,5 @@ urlpatterns = [
     path('users/', login_required(views.users), name='users'),
     path('', login_required(views.index), name='index'),
     path('',login,{'template_name':'login.html'}, name = 'login')
+
 ]
