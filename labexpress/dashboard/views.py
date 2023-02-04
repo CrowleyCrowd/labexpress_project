@@ -12,6 +12,9 @@ def index(request):
 def users(request):
     return render(request, 'dashboard/users.html')
 
+def createUser(request):
+    return render(request, 'dashboard/create_user.html')
+
 def customers(request):
 
    return render(request, 'dashboard/customers.html',{
@@ -41,4 +44,10 @@ def creat_customer(request):
                 'form': NewCusTomer,
                  'error':'Erorr'})
 
+
+=======
+def createDevices(request):
+    return render(request, 'dashboard/create_device.html')
+
+def login(request):
 

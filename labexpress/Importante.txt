@@ -1,6 +1,6 @@
 Listado de comoandos Django
 
-Inicializar/Docker: docker-compose up 
+Inicializar/Docker: docker-compose up
 Parar Docker: docker-compose stop
 Eliminar Instancias Docker: docker-compose down
 Crear Tablas en Postgres: docker-compose exec web python manage.py migrate
