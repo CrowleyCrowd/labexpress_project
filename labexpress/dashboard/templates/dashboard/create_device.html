@@ -1,0 +1,66 @@
+{% extends "./base_index.html" %}
+
+{% block content %}
+
+
+<p class="text-center">
+<h1>Registro de Equipo</h1>
+</p>
+
+
+
+<label for="Tipo de Equipo" class="form-label">Tipo de Equipo</label>
+
+<select class="form-select" id="country" required="">
+  <option value="">Tipo de Equipo</option>
+  <option>Tipo 1 </option>
+  <option>Tipo 2 </option>
+
+</select>
+<div class="invalid-feedback">
+  Please select a valid country.
+</div>
+
+<label for="Marca" class="form-label">Marca</label>
+
+<select class="form-select" id="country" required="">
+  <option value="">Marca</option>
+  <option>Marca 1</option>
+  <option>Marca 2</option>
+  <option>Marca 3</option>
+
+</select>
+<div class="invalid-feedback">
+  Please select a valid country.
+</div>
+
+<label for="Modelo" class="form-label">Modelo</label>
+
+<select class="form-select" id="country" required="">
+  <option value="">Modelo</option>
+  <option>Modelo 1 </option>
+  <option>Modelo 2 </option>
+  <option>Modelo 3 </option>
+
+</select>
+<div class="invalid-feedback">
+  Please select a valid country.
+</div>
+
+<label for="Número de Serie" class="form-label">Numero de Serie</label>
+
+<select class="form-select" id="country" required="">
+  <option value="">Número de serie </option>
+</select>
+<div class="invalid-feedback">
+  Please select a valid country.
+</div>
+
+<hr class="my-4">
+
+
+<button type="button" class="btn btn-dark">Guardar</button>
+
+<button type="button" class="btn btn-dark">Cancelar</button>
+
+{% endblock %}
