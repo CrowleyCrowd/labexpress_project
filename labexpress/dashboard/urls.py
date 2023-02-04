@@ -6,7 +6,8 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('users/', views.users, name='users'),
     path('customers/', views.customers, name='customers'),
+    path('customers/creat/', views.creat_customer, name='creat_customers'),
     path('devices/', views.devices, name='devices'),
-    path('repairs/', views.repairs, name='repairs'),
-    
+    path('repairs/', views.repairs, name='repairs')
+
 ]
