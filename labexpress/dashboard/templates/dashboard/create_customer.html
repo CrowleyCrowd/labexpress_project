@@ -1,0 +1,13 @@
+{% extends './base_index.html' %}
+
+{% load static %}
+
+{% block content %}
+  {{ error }}
+
+  <form action="/dashboard/customers/create_customer/" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Save</button>
+  </form>
+{% endblock %}

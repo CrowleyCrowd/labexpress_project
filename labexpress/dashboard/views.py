@@ -9,45 +9,50 @@ from .models import Customer
 def index(request):
     return render(request, 'dashboard/index.html')
 
+
 def users(request):
     return render(request, 'dashboard/users.html')
+
 
 def createUser(request):
     return render(request, 'dashboard/create_user.html')
 
-def customers(request):
 
-   return render(request, 'dashboard/customers.html',{
+def customers(request):
+    customers = Customer.objects.all()
+    return render(request, 'dashboard/customers.html', {
         'customers': customers
     })
 
-def repairs(request):
-    return render(request, 'dashboard/repairs.html')
+
+def createCustomer(request):
+    if request.method == 'GET':
+        return render(request, 'dashboard/create_customer.html', {
+            'form': NewCusTomer})
+    else:
+        try:
+            form = NewCusTomer(request.POST)
+            newCustomer = form.save(commit=False)
+            newCustomer.user = request.user
+            newCustomer.save()
+            return redirect('customers')
+        except ValueError:
+            return render(request, 'dashboard/create_customer.html', {
+                'form': NewCusTomer,
+                'error': 'Error'})
+
 
 def devices(request):
     return render(request, 'dashboard/devices.html')
 
 
-def creat_customer(request):
-    if  request.method == 'GET':
-      return  render(request, 'dashboard/creat_customers.html', {
-      'form': NewCusTomer })
-    else:
-        try:
-           form =NewCusTomer(request.POST)
-           newCustomer= form.save(commit=False)
-           newCustomer.user= request.user
-           newCustomer.save()
-           return redirect('customers')
-        except ValueError:
-            return render(request, 'dashboard/creat_customers.html', {
-                'form': NewCusTomer,
-                 'error':'Erorr'})
-
-
-=======
-def createDevices(request):
+def createDevice(request):
     return render(request, 'dashboard/create_device.html')
 
-def login(request):
 
+def repairs(request):
+    return render(request, 'dashboard/repairs.html')
+
+
+def createRepair(request):
+    return render(request, 'dashboard/create_repair.html')
