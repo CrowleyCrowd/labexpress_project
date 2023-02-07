@@ -1,7 +1,13 @@
 {% extends "./base_index.html" %}
 
 {% block content %}
-
-<h1>RESUMEN DE EQUIPOS</h1>
+<div>
+    <h1>Resumen de Equipos</h1>
+    <div>
+      <a href="{% url 'create_device'%}">
+        <button class="w-20 btn btn-lg btn-primary" style="background-color: black; border-color: #1d1d1b;">Nuevo Equipo</button>
+      </a>
+    </div>
+  </div>
 
 {% endblock %}

@@ -4,6 +4,26 @@ html {
     min-height: 100%;
 }
 
+.btn-primary {
+    background-color: #1d1d1b;
+    border-color: #1d1d1b;
+}
+
+.btn-primary:hover {
+    background-color: #1d1d1b !important;
+    border-color: #1d1d1b !important;
+}
+
+.btn-primary:active {
+    background-color: #1d1d1b !important;
+    border-color: #1d1d1b !important;
+}
+
+.btn-primary:visited {
+    background-color: #1d1d1b !important;
+    border-color: #1d1d1b !important;
+}
+
 .navbar-menu {
     position: relative;
     -webkit-box-flex: 1;

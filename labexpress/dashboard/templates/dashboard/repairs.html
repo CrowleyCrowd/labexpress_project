@@ -1,5 +1,12 @@
 {% extends "./base_index.html" %}
 
 {% block content %}
-<H1>RESUMEN DE REPARACIONES</H1>
+<div>
+    <h1>Resumen de Reparaciones</h1>
+    <div>
+      <a href="{% url 'create_repair'%}">
+        <button class="w-20 btn btn-lg btn-primary" style="background-color: black; border-color: #1d1d1b;">Nueva Reparación</button>
+      </a>
+    </div>
+  </div>
 {% endblock %}
