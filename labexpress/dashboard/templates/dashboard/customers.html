@@ -1,8 +1,15 @@
 {% extends "./base_index.html" %}
 
 {% block content %}
+<div>
+  <h1>Resumen de Clientes</h1>
+  <div>
+    <a href="{% url 'create_customer'%}">
+      <button class="w-20 btn btn-lg btn-primary" style="background-color: black; border-color: #1d1d1b;">Nuevo Cliente</button>
+    </a>
+  </div>
+</div>
 
-<h1>Clientes</h1>
 
 {%  for customer in customers %}
 <div>
@@ -12,8 +19,5 @@
 <button>Update</button>
 
 {% endfor %}
-
-=======
-<H1>RESUMEN DE CLIENTES</H1>
 
 {% endblock %}
