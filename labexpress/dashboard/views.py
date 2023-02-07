@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from .forms import NewCusTomer
+from .forms import newCustomer
 from .models import Customer
 
 
@@ -28,17 +28,17 @@ def customers(request):
 def createCustomer(request):
     if request.method == 'GET':
         return render(request, 'dashboard/create_customer.html', {
-            'form': NewCusTomer})
+            'form': newCustomer})
     else:
         try:
-            form = NewCusTomer(request.POST)
-            newCustomer = form.save(commit=False)
-            newCustomer.user = request.user
-            newCustomer.save()
+            form = newCustomer(request.POST)
+            nc = form.save(commit=False)
+            nc.user = request.user
+            nc.save()
             return redirect('customers')
         except ValueError:
             return render(request, 'dashboard/create_customer.html', {
-                'form': NewCusTomer,
+                'form': newCustomer,
                 'error': 'Error'})
 
 

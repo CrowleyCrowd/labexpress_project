@@ -1,12 +1,16 @@
 {% extends "./base_index.html" %}
 
+<title>{% block title %}LAB-EXPRESS | Reparaciones{% endblock %}</title>
+
 {% block content %}
 <div>
-    <h1>Resumen de Reparaciones</h1>
-    <div>
-      <a href="{% url 'create_repair'%}">
-        <button class="w-20 btn btn-lg btn-primary" style="background-color: black; border-color: #1d1d1b;">Nueva Reparación</button>
-      </a>
-    </div>
+  <h1>Resumen de Reparaciones</h1>
+  <hr style="color:transparent">
+  <div>
+    <a href="{% url 'create_repair'%}">
+      <button class="w-20 btn btn-md btn-primary" style="background-color: black; border-color: #1d1d1b;">Nueva Reparación</button>
+    </a>
   </div>
+  <hr style="color:transparent">
+</div>
 {% endblock %}

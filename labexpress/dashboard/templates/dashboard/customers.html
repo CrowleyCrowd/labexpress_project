@@ -1,23 +1,48 @@
 {% extends "./base_index.html" %}
 
+<title>{% block title %}LAB-EXPRESS | Clientes{% endblock %}</title>
+
 {% block content %}
 <div>
   <h1>Resumen de Clientes</h1>
+  <hr style="color:transparent">
   <div>
     <a href="{% url 'create_customer'%}">
-      <button class="w-20 btn btn-lg btn-primary" style="background-color: black; border-color: #1d1d1b;">Nuevo Cliente</button>
+      <button class="w-20 btn btn-md btn-primary" style="background-color: black; border-color: #1d1d1b;">Nuevo Cliente</button>
     </a>
   </div>
 </div>
-
-
-{%  for customer in customers %}
+<hr style="color:transparent">
 <div>
-  <h4>{{ customer.firstname }}</h4>
+  <table class="table" style="background-color: white;">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Identificación</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Celular</th>
+        <th scope="col">Correo Electrónico</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%  for customer in customers %}
+      <tr>
+        <th scope="row" >{{ customer.id }}</th>
+        <td>{{ customer.document }}</td>
+        <td>{{ customer.firstname }}</td>
+        <td>{{ customer.lastname }}</td>
+        <td>{{ customer.address }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>{{ customer.cellphone }}</td>
+        <td>{{ customer.email }}</td>
+        <td><button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Editar</button></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
-<button>Delet</button>
-<button>Update</button>
-
-{% endfor %}
-
 {% endblock %}
