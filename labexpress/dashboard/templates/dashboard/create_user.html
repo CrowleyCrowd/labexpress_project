@@ -1,0 +1,60 @@
+{% extends "./base_index.html" %}
+
+{% block content %}
+<h5 class="card-title">Registro de Usuario</h5>
+<ul>
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <li>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="user_firstname">
+      </li>
+      <li>
+        <label for="lastname">Apellido:</label>
+        <input type="text" id="lastname" name="user_lastname">
+      </li>
+      <li>
+        <label for="mail">Correo electrónico:</label>
+        <input type="email" id="mail" name="user_mail">
+      </li>
+      <li>
+        <label for="address">Dirección:</label>
+        <input type="text" id="address" name="user_address">
+      </li>
+      <li>
+        <button name="button">Guardar</button>
+      </li>
+    </div>
+    <div class="col">
+      <li>
+        <label for="number1">Telefono:</label>
+        <input type="int" id="number1" name="user_number1">
+      </li>
+      <li>
+        <label for="number">Numero:</label>
+        <input type="int" id="number" name="user_number">
+      </li>
+      <li>
+        <label for="pass">Constraseña:</label>
+        <input type="text" id="pass" name="user_password">
+      </li>
+      <li>
+        <label for="datereg">Fecha de Registro:</label>
+        <input type="date" id="datereg" name="user_datreg">
+      </li>
+      <li>
+        <label for="usact">Usuario Activo</label>
+        <input type="checkbox" id="usact" name="user_act">
+      </li>
+
+      <li>
+        <button name="button">Cancelar</button>
+      </li>
+    </div>
+    <div class="col">
+    </div>
+     
+</ul>
+{% endblock %}
