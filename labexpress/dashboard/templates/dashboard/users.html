@@ -1,12 +1,16 @@
 {% extends "./base_index.html" %}
 
+<title>{% block title %}LAB-EXPRESS | Usuarios{% endblock %}</title>
+
 {% block content %}
 <div>
-    <h1>Resumen de Usuarios</h1>
-    <div>
-      <a href="{% url 'create_user'%}">
-        <button class="w-20 btn btn-lg btn-primary" style="background-color: black; border-color: #1d1d1b;">Nuevo Usuario</button>
-      </a>
-    </div>
+  <h1>Resumen de Usuarios</h1>
+  <hr style="color:transparent">
+  <div>
+    <a href="{% url 'create_user'%}">
+      <button class="w-20 btn btn-md btn-primary" style="background-color: black; border-color: #1d1d1b;">Nuevo Usuario</button>
+    </a>
   </div>
+</div>
+<hr style="color:transparent">
 {% endblock %}
