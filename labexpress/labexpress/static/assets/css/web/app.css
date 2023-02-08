@@ -73,12 +73,13 @@ html {
     transition: all .3s ease-in-out;
 }
 
-/*.navbar-menu .nav-footer {
+.navbar-menu .nav-footer {
     border-top: 1px solid gray;
-}*/
+}
 
 .container {
     margin-left: 280px;
+    max-width: 960px;  
 }
 
 .background-main {

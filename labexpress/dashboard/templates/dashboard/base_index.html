@@ -21,10 +21,9 @@
   <link href="{% static 'assets/css/web/app.bundle.css' %}" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body class="bg-light">
   <div class="container-fluid">
     <div class="row">
-      <!--<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"></nav>-->
       <nav id="sidebarMenu">
         <div class="navbar-menu" style="width: 280px">
           <div class="navbar-brand-box">
@@ -68,7 +67,7 @@
               </li>
             </ul>
           </div>
-          <div>
+          <div style="background-color:whitesmoke;">
             <ul class="nav nav-pills flex-column mb-auto">
               <li>
                 <a class="nav-link link-dark" style="text-transform: capitalize;">
@@ -85,13 +84,15 @@
             </ul>
           </div>
         </div>
-      </nav>
+      </nav>  
       <main class="col-md-9 ms-sm-auto col-lg-11 px-md-4">
-        <div class="container">
-          {% block content %}{% endblock %}
+        
+        <div class="container" > 
+          {% block content %}
+          {% endblock %}
         </div>
-      </main>
-      <div class="background-main"> </div>
+        
+      </main>  
     </div>
   </div>
 </body>
