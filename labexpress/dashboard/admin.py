@@ -5,7 +5,7 @@ from .models import Category
 from .models import Brand
 from .models import Product
 from .models import Device
-from .models import Order
+from .models import Repair
 
 # Register your models here.
 
@@ -15,4 +15,4 @@ admin.site.register(Category)
 admin.site.register(Brand)
 admin.site.register(Product)
 admin.site.register(Device)
-admin.site.register(Order)
+admin.site.register(Repair)
