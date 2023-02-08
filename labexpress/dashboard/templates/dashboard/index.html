@@ -3,15 +3,17 @@
 <title>{% block title %}LAB-EXPRESS | Panel Principal{% endblock %}</title>
 
 {% block content %}
+<h1 class="text-dark" style="text-align: center;">{{ user.username | upper}} BIENVENIDO</h1>
 <div>
   <div class="row" style="text-align: center;">
       <div class="col">
       </div>
       <div class="col">
-          <h1 class="text-dark" style="text-align: center;"> {{ user.username | upper}} BIENVENIDO</h1>
+          
       </div>
       <div class="col">
       </div>
   </div>
 </div>
+<div class="background-main"> </div>
 {% endblock %}
