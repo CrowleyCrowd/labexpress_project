@@ -9,12 +9,16 @@
 </title>
 
 {% block content %}
-  <main>
-    {{ error }}
-    <form action="/dashboard/customers/create_customer/" method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Guardar</button>
-    </form>
+  <main >
+    <div  >
+       <section class="col-md-6 offset-md-2  mt-4">
+         <form action="/dashboard/customers/create_customer/" method="POST" class="card card-body">
+             {{ error }}
+           <h4 class="text-center"  >Ficha de Cliente</h4>
+              {% csrf_token %}
+               {{ form.as_p }}
+             <button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Guardar</button>
+         </form>
+    </div>
   </main>
 {% endblock %}
