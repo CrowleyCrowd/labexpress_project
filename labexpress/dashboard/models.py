@@ -48,7 +48,7 @@ class Device(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    status
+    status = models.BooleanField('Activo', default=True)
 
 
 class Repair(models.Model):
