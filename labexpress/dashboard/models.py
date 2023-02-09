@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 import datetime
+import time
 
 # Create your models here.
 
@@ -27,6 +28,9 @@ class Customer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
+
+
+
 class Category(models.Model):
     description = models.CharField(
         'Tipo de Equipo', max_length=100, blank=False)
@@ -49,7 +53,7 @@ class Device(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
 
-class Order(models.Model):
+class Repair(models.Model):
     # Usuario que crea la orden
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
     customer = models.ForeignKey(
@@ -70,3 +74,4 @@ class Order(models.Model):
         'Fecha Prometida', blank=False)  # Fecha prometida
     time_repair = models.TimeField(
         'Hora Prometida', blank=False)  # Hora Prometida
+    status = models.BooleanField('Activo', default=True)
