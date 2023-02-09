@@ -3,6 +3,12 @@ from django import forms
 import datetime
 import time
 from .models import Customer, Repair
+from django.contrib.auth.models import User
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'first_name','last_name','email', 'password','date_joined','is_staff','is_superuser','is_active']
 
 
 class CustomerForm (ModelForm):

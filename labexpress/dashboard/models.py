@@ -28,6 +28,9 @@ class Customer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
+
+
+
 class Category(models.Model):
     description = models.CharField(
         'Tipo de Equipo', max_length=100, blank=False)

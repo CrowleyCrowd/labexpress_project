@@ -4,7 +4,7 @@
 
 {% block content %}
 <div>
-  <h1>Resumen de Usuarios</h1>
+  <h1>Usuarios</h1>
   <hr style="color:transparent">
   <div>
     <a href="{% url 'create_user'%}">
@@ -13,4 +13,36 @@
   </div>
 </div>
 <hr style="color:transparent">
+<div>
+<table class="table" style="background-color: white;">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre de Usuario</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Correo Electrónico</th>
+      <th scope="col">Fecha de Ingreso</th>
+      <th scope="col">Staff</th>
+      <th scope="col">Super Usuario</th>
+      <th scope="col">Activo</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%  for user in users %}
+    <tr>
+      <td>{{ user.username }}</td>
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.date_joined }}</td>
+      <td>{{ user.is_staff }}</td>
+      <td>{{ user.is_superuser }}</td>
+      <td>{{ user.is_active }}</td>
+      <td><button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Editar</button></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div>
 {% endblock %}
