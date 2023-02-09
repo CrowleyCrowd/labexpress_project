@@ -8,6 +8,6 @@
   <form action="/dashboard/customers/create_customer/" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button>Save</button>
+    <button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Guardar</button>
   </form>
 {% endblock %}
