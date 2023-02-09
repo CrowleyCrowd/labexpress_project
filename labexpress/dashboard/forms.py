@@ -16,6 +16,15 @@ class CustomerForm (ModelForm):
         model = Customer
         fields = ['document', 'firstname', 'lastname', 'address', 'phone',
                   'cellphone', 'email']
+        widgets = {
+            'document': forms.TextInput(attrs={'class':'form-control m-auto','placeholder': 'Ingresa tu número de identificación' }),
+            'firstname': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu nombre'}),
+            'lastname': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu apellido'}),
+            'address': forms.Textarea(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu dirección ','rows':4}),
+            'phone': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu teléfono'}),
+            'cellphone': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu celular'}),
+            'email': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu email'})
+        }
 
 
 class RepairForm (forms.ModelForm):
