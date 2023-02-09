@@ -7,6 +7,21 @@ from django.contrib.auth.models import User
 
 
 class UserForm(forms.ModelForm):
+
+    username = forms.CharField(widget=forms.TextInput(
+        attrs={'type': 'textarea', 'class': 'form-control', 'style': 'width:500px; height:40px'}))
+    first_name = forms.CharField(widget=forms.TextInput(
+        attrs={'type': 'textarea', 'class': 'form-control', 'style': 'width:500px; height:40px'}))
+    last_name = forms.CharField(widget=forms.TextInput(
+        attrs={'type': 'textarea', 'class': 'form-control', 'style': 'width:500px; height:40px'}))
+    email = forms.CharField(widget=forms.TextInput(
+        attrs={'type': 'textarea', 'class': 'form-control', 'style': 'width:500px; height:40px'}))
+    password = forms.CharField(widget=forms.TextInput(
+        attrs={'type': 'password', 'class': 'form-control', 'style': 'width:500px; height:40px'}))
+    date_joined = forms.DateField(widget=forms.TextInput(
+        attrs={'type': 'date', 'class': 'form-control', 'style': 'width:150px'}))
+    
+
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'email',
@@ -14,10 +29,20 @@ class UserForm(forms.ModelForm):
 
 
 class CustomerForm (ModelForm):
+    
     class Meta:
         model = Customer
         fields = ['document', 'firstname', 'lastname', 'address', 'phone',
                   'cellphone', 'email']
+        widgets = {
+            'document': forms.TextInput(attrs={'class':'form-control m-auto','placeholder': 'Ingresa tu número de identificación' }),
+            'firstname': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu nombre'}),
+            'lastname': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu apellido'}),
+            'address': forms.Textarea(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu dirección ','rows':4}),
+            'phone': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu teléfono'}),
+            'cellphone': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu celular'}),
+            'email': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu email'})
+        }
 
 
 class RepairForm (forms.ModelForm):
