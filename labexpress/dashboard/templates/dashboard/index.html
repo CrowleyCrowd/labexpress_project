@@ -1,19 +1,19 @@
-{% extends "./base_index.html" %}
+{% extends './base_index.html' %}
 
-<title>{% block title %}LAB-EXPRESS | Panel Principal{% endblock %}</title>
+<title>
+  {% block title %}
+    LAB-EXPRESS | Panel Principal
+  {% endblock %}
+</title>
 
 {% block content %}
-<h1 class="text-dark" style="text-align: center;">{{ user.username | upper}} BIENVENIDO</h1>
-<div>
-  <div class="row" style="text-align: center;">
-      <div class="col">
+  <main>
+    <h1 class="text-dark" style="text-align: center;">{{ user.username|upper }} BIENVENIDO</h1>
+    <div>
+      <div class="row" style="text-align: center;">
+        <div class="col-md-6"></div>
       </div>
-      <div class="col">
-          
-      </div>
-      <div class="col">
-      </div>
-  </div>
-</div>
-<div class="background-main"> </div>
+    </div>
+    <div class="background-main"></div>
+  </main>
 {% endblock %}

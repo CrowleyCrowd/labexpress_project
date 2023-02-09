@@ -28,6 +28,9 @@ class Customer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
+
+
+
 class Category(models.Model):
     description = models.CharField(
         'Tipo de Equipo', max_length=100, blank=False)
@@ -71,3 +74,4 @@ class Repair(models.Model):
         'Fecha Prometida', blank=False)  # Fecha prometida
     time_repair = models.TimeField(
         'Hora Prometida', blank=False)  # Hora Prometida
+    status = models.BooleanField('Activo', default=True)
