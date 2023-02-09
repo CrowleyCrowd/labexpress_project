@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
 from .forms import CustomerForm, RepairForm, UserForm
-from .models import Customer, Repair
+from .models import Customer, Repair, Device
 from django.contrib.auth.models import User
 
 
@@ -54,7 +54,10 @@ def CreateCustomer(request):
 
 
 def Devices(request):
-    return render(request, 'dashboard/devices.html')
+    devices = Device.objects.all()
+    return render(request, 'dashboard/devices.html',{
+        'devices' : devices
+    })
 
 
 def CreateDevice(request):
