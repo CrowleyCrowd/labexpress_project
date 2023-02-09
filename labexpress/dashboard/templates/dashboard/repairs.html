@@ -14,7 +14,6 @@
 </div>
 <hr style="color:transparent">
 <div>
-
   <table class="table" style="background-color: white;">
     <thead class="thead-dark">
       <tr>
@@ -25,6 +24,7 @@
         <th scope="col">Responsable</th>
         <th scope="col">Entrega</th>
         <th scope="col">Acciones</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -36,11 +36,19 @@
         <td>{{ repair.date_reception }}</td>
         <td>{{ repair.assignee }}</td>
         <td>{{ repair.date_repair }}</td>
-        <td><button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Editar</button></td>
+        <td>
+          <a href="{% url 'edit_repair' repair.id %}">
+            <button class="w-20 btn btn-sm btn-primary" style="background-color: black; border-color: #1d1d1b;">Editar</button>
+          </a>
+        </td> 
+        <td>
+          <a href="{% url 'delete_repair' repair.id %}">
+            <button class="w-20 btn btn-sm btn-primary" style="background-color: black; border-color: #1d1d1b;">Eliminar</button>
+          </a>
+        </td>        
       </tr>
       {% endfor %}
     </tbody>
   </table>
-
 </div>
 {% endblock %}

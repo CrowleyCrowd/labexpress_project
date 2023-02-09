@@ -19,6 +19,7 @@
     crossorigin="anonymous"></script>
   <link href="{% static 'assets/css/web/app.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'assets/css/web/app.bundle.css' %}" rel="stylesheet" type="text/css">
+
 </head>
 
 <body class="bg-light">
@@ -84,15 +85,15 @@
             </ul>
           </div>
         </div>
-      </nav>  
+      </nav>
       <main class="col-md-9 ms-sm-auto col-lg-11 px-md-4">
-        
-        <div class="container" > 
+
+        <div class="container">
           {% block content %}
           {% endblock %}
         </div>
-        
-      </main>  
+
+      </main>
     </div>
   </div>
 </body>

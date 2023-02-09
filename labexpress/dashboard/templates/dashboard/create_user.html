@@ -8,24 +8,24 @@
 
 <h5 class="card-title">Registro de Usuario</h5>
 
-
-  <div class="row">
+<!--
+<div class="row">
     <div class="col">
     </div>
     <div class="col">
-    
+
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="user_firstname">
-      
+
         <label for="lastname">Apellido:</label>
         <input type="text" id="lastname" name="user_lastname">
-      
+
         <label for="mail">Correo electrónico:</label>
         <input type="email" id="mail" name="user_mail">
-      
+
         <label for="address">Dirección:</label>
         <input type="text" id="address" name="user_address">
-      
+
         <button name="button">Guardar</button>
 
     </div>
@@ -33,13 +33,13 @@
 
         <label for="number1">Telefono:</label>
         <input type="int" id="number1" name="user_number1">
-      
+
         <label for="number">Numero:</label>
         <input type="int" id="number" name="user_number">
-              
+
         <label for="pass">Constraseña:</label>
         <input type="text" id="pass" name="user_password">
-    
+
         <label for="datereg">Fecha de Registro:</label>
         <input type="date" id="datereg" name="user_datreg">
 
@@ -50,5 +50,11 @@
     </div>
     <div class="col">
     </div>
+-->
 
-{% endblock %}
+<h4 class="mb-3">Registro de Usuario</h4><hr style="color:transparent" />
+<form method="POST">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    <button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Guardar</button>
+    {% endblock %}
