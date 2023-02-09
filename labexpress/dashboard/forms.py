@@ -2,7 +2,7 @@ from django.forms import ModelForm
 from django import forms
 import datetime
 import time
-from .models import Customer, Repair
+from .models import Customer, Repair, Device
 from django.contrib.auth.models import User
 
 class UserForm(forms.ModelForm):
@@ -38,3 +38,8 @@ class RepairForm (forms.ModelForm):
         model = Repair
         fields = ['creator', 'customer', 'serial', 'date_reception', 'time_reception',
                   'details', 'observations', 'assignee', 'date_repair', 'time_repair']
+        
+        
+    class DeviceForm:
+        model = Device    
+        fields = ['serial', 'category', 'brand', 'product'] 
