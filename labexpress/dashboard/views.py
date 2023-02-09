@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
-from .forms import CustomerForm, RepairForm
+from .forms import CustomerForm, RepairForm, UserForm
 from .models import Customer, Repair
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -11,11 +12,21 @@ def Index(request):
 
 
 def Users(request):
-    return render(request, 'dashboard/users.html')
+    Users = User.objects.all()
+    return render(request, 'dashboard/users.html', {
+        'users': Users
+    })
 
 
 def CreateUser(request):
-    return render(request, 'dashboard/create_user.html')
+    if request.method == 'POST':
+        user_form = UserForm(request.POST)
+        if user_form.is_valid():
+            user_form.save()
+            return redirect('users')
+    else:
+        user_form = UserForm()
+    return render(request, 'dashboard/create_user.html', {'user_form': user_form})
 
 
 def Customers(request):
