@@ -14,5 +14,30 @@
     </div>
   </div>
   <hr style="color:transparent">
+
+  <div>
+    <table class="table" style="background-color: white;">
+      <thead class="thead-dark">
+        <tr>    
+          <th scope="col">Tipon de equipo</th>     
+          <th scope="col">Marca</th>      
+          <th scope="col">Modelo</th>       
+          <th scope="col">Numero de serie</th>       
+        
+        </tr>  
+      </thead>  
+      <tbody>   
+        {%  for device in devices %}  
+        <tr>  
+          <td>{{ device.category }}</td>  
+          <td>{{ device.brand }}</td>  
+          <td>{{ device.product }}</td>
+          <td>{{ device.serial }}</td>  
+          <td><button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Editar</button></td>    
+        </tr>   
+        {% endfor %}    
+      </tbody>
+    </table>  
+  </div>
 </main>
 {% endblock %}
