@@ -1,12 +1,20 @@
-{% extends "./base_index.html" %}
+{% extends './base_index.html' %}
 
-<title>{% block title %}LAB-EXPRESS | Registro de Usuario{% endblock title %}</title>
+<title>
+  {% block title %}
+    LAB-EXPRESS | Ficha de Usuario
+  {% endblock %}
+</title>
 
 {% block content %}
   {{ error }}
-
-  <h4 class="mb-3">Registro de Usuario</h4><hr style="color:transparent" /><form method="POST">  
-    {% csrf_token %}  
-    {{ user_form.as_p }}  
-    <button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Guardar</button>
+  <main>
+    <h4 class="mb-3">Ficha de Usuario</h4>
+    <hr style="color:transparent" />
+    <form method="POST">
+      {% csrf_token %}
+      {{ user_form.as_p }}
+      <button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Guardar</button>
+    </form>
+  </main>
 {% endblock %}

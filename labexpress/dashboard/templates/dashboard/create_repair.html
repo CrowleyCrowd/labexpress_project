@@ -2,96 +2,91 @@
 
 <title>
   {% block title %}
-    LAB-EXPRESS | Ficha de Reparación
+  LAB-EXPRESS | Ficha de Reparación
   {% endblock %}
 </title>
 
 {% block content %}
-  <!-- 
-<style>
-  .form-group {
-    width: 90%%;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  </style>
- -->
 
-  <main>
-    <div class="row g-5">
-      <div class="col-md-7 col-lg-8">
-        <div>
-          <h4 class="mb-3">Ficha de Reparación</h4>
-        </div>
-        <hr style="color:transparent">
-        <div>
-          <a href="{% url 'repairs' %}">
-            <button class="w-20 btn btn-sm btn-primary" style="background-color: black; border-color: #1d1d1b;">Cancelar</button>
-          </a>
-        </div>
-        <hr style="color:transparent">
-        <form method="post" style="background-color: #f8f9fa;">
-          {% csrf_token %}
-          {% if error %}
-            <h2>{{ error }}</h2>
-          {% else %}
-            <div class="row g-3">
-              <div class="col-sm-4">
-                <label for="date_reception" class="form-label">Fecha de Recepción</label>
-                {{ repair_form.date_reception }}
-              </div>
-              <div class="col-sm-4">
-                <label for="id_time_reception" class="form-label">Hora de Recepción</label>
-                {{ repair_form.time_reception }}
-              </div>
-              <div class="col-md-4"></div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="creator" class="form-label">Recibido por:</label>
-                  {{ repair_form.creator }}
-                </div>
-              </div>
-
-              <div class="col-md-7">
-                <div class="form-group">
-                  <label for="customer" class="form-label">Cliente:</label>
-                  {{ repair_form.customer }}
-                </div>
-              </div>
-              <div class="col-md-7">
-                <div class="form-group">
-                  <label for="device" class="form-label">Equipo:</label>
-                  {{ repair_form.serial }}
-                </div>
-              </div>
-              <div>
-                <label for="details" class="form-label">Descripción de la Falla</label>
-                {{ repair_form.details }}
-                <label for="observations" class="form-label">Observaciones del Equipo</label>
-                {{ repair_form.observations }}
-              </div>
-              <div class="col-md-10">
-                <div class="form-group">
-                  <label for="assignee" class="form-label">Tecnico Asignado:</label>
-                  {{ repair_form.assignee }}
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <label for="id_date_repair" class="form-label">Fecha de Entrega</label>
-                <input type="date" name="date_repair" class="form-control" required="" id="id_date_repair" spellcheck="false" data-ms-editor="true" />
-              </div>
-              <div class="col-sm-4">
-                <label for="id_time_repair" class="form-label">Hora de Entrega</label>
-                <input type="time" name="time_repair" class="form-control" required="" id="id_time_repair" spellcheck="false" data-ms-editor="true" />
-              </div>
-            </div>
-          {% endif %}
-          <hr style="color:transparent" />
-          <div>
-            <button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Guardar</button>
-          </div>
-        </form>
+<main>
+  <div class="row g-5">
+    <div class="col-md-7 col-lg-8">
+      <div>
+        <h4 class="mb-3">Ficha de Reparación</h4>
       </div>
+      <hr style="color:transparent">
+      <div>
+        <a href="{% url 'repairs' %}">
+          <button class="w-20 btn btn-sm btn-primary"
+            style="background-color: black; border-color: #1d1d1b;">Cancelar</button>
+        </a>
+      </div>
+      <hr style="color:transparent">
+      <form method="post">
+        {% csrf_token %}
+        {% if error %}
+        <h2>{{ error }}</h2>
+        {% else %}
+        <div class="row g-3">
+          <div class="col-sm-4">
+            <label for="date_reception" class="form-label">Fecha de Recepción</label>
+            {{ repair_form.date_reception }}
+          </div>
+          <div class="col-sm-4">
+            <label for="id_time_reception" class="form-label">Hora de Recepción</label>
+            {{ repair_form.time_reception }}
+          </div>
+          <div class="col-md-4"></div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="creator" class="form-label">Recibido por:</label>
+              {{ repair_form.creator }}
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="form-group">
+              <label for="customer" class="form-label">Cliente:</label>
+              {{ repair_form.customer }}
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="form-group">
+              <label for="device" class="form-label">Equipo:</label>
+              {{ repair_form.serial }}
+            </div>
+          </div>
+          <div>
+            <label for="details" class="form-label">Descripción de la Falla</label>
+            {{ repair_form.details }}
+            <label for="observations" class="form-label">Observaciones del Equipo</label>
+            {{ repair_form.observations }}
+          </div>
+          <div class="col-md-10">
+            <div class="form-group">
+              <label for="assignee" class="form-label">Tecnico Asignado:</label>
+              {{ repair_form.assignee }}
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <label for="id_date_repair" class="form-label">Fecha de Entrega</label>
+            <input type="date" name="date_repair" class="form-control" required="" id="id_date_repair"
+              spellcheck="false" data-ms-editor="true" />
+          </div>
+          <div class="col-sm-4">
+            <label for="id_time_repair" class="form-label">Hora de Entrega</label>
+            <input type="time" name="time_repair" class="form-control" required="" id="id_time_repair"
+              spellcheck="false" data-ms-editor="true" />
+          </div>
+        </div>
+        {% endif %}
+        <hr style="color:transparent" />
+        <div>
+          <button class="w-20 btn btn-sm btn-primary" type="submit"
+            style="background-color: black; border-color: #1d1d1b;">Guardar</button>
+        </div>
+      </form>
     </div>
-  </main>
+  </div>
+</main>
+
 {% endblock %}
