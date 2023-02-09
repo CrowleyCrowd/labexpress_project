@@ -28,9 +28,6 @@ class Customer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
-
-
-
 class Category(models.Model):
     description = models.CharField(
         'Tipo de Equipo', max_length=100, blank=False)
@@ -51,6 +48,7 @@ class Device(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    status
 
 
 class Repair(models.Model):
