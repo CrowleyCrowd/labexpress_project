@@ -1,13 +1,20 @@
 {% extends './base_index.html' %}
 
 {% load static %}
-<title>{% block title %}LAB-EXPRESS | Ficha de Cliente{% endblock %}</title>
-{% block content %}
-  {{ error }}
 
-  <form action="/dashboard/customers/create_customer/" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Guardar</button>
-  </form>
+<title>
+  {% block title %}
+    LAB-EXPRESS | Ficha de Cliente
+  {% endblock %}
+</title>
+
+{% block content %}
+  <main>
+    {{ error }}
+    <form action="/dashboard/customers/create_customer/" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Guardar</button>
+    </form>
+  </main>
 {% endblock %}
