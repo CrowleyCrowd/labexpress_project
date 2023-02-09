@@ -21,20 +21,18 @@ class CustomerForm (ModelForm):
 class RepairForm (forms.ModelForm):
     date_reception = forms.DateField(
         widget=forms.TextInput(
-            attrs={'type': 'date', 'class': 'form-control', 'style': 'width:150px'}),
-        label='Fecha')
-    time_reception = forms.TimeField(widget=forms.TextInput(attrs={'type': 'time', 'class': 'form-control', 'style': 'width:150px'}),
-                                     label='Hora')
-    details = forms.CharField(widget=forms.TextInput(attrs={'type': 'textarea', 'class': 'form-control', 'style': 'width:50%; height:100px'}),
-                              label='Falla de Equipo')
-    observations = forms.CharField(widget=forms.TextInput(attrs={'type': 'textarea', 'class': 'form-control', 'style': 'width:50%; height:100px'}),
-                                   label='Observaciones del Equipo')
+            attrs={'type': 'date', 'class': 'form-control', 'style': 'width:150px'}))
+    time_reception = forms.TimeField(widget=forms.TextInput(
+        attrs={'type': 'time', 'class': 'form-control', 'style': 'width:150px'}))
+    details = forms.CharField(widget=forms.TextInput(
+        attrs={'type': 'textarea', 'class': 'form-control', 'style': 'width:50%; height:100px'}))
+    observations = forms.CharField(widget=forms.TextInput(
+        attrs={'type': 'textarea', 'class': 'form-control', 'style': 'width:50%; height:100px'}))
     date_repair = forms.DateField(
         widget=forms.TextInput(
-            attrs={'type': 'date', 'class': 'form-control', 'style': 'width:150px'}),
-        label='Fecha de Entrega')
-    time_repair = forms.TimeField(widget=forms.TextInput(attrs={'type': 'time', 'class': 'form-control', 'style': 'width:150px'}),
-                                  label='Hora de Entrega')
+            attrs={'type': 'date', 'class': 'form-control', 'style': 'width:150px'}))
+    time_repair = forms.TimeField(widget=forms.TextInput(
+        attrs={'type': 'time', 'class': 'form-control', 'style': 'width:150px'}))
 
     class Meta:
         model = Repair

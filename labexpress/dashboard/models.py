@@ -74,3 +74,4 @@ class Repair(models.Model):
         'Fecha Prometida', blank=False)  # Fecha prometida
     time_repair = models.TimeField(
         'Hora Prometida', blank=False)  # Hora Prometida
+    status = models.BooleanField('Activo', default=True)

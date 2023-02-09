@@ -8,6 +8,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 
 urlpatterns = [
+    path('repairs/edit_repair/<int:id>', login_required(views.DeleteRepair),
+         name='delete_repair'),
+    path('repairs/edit_repair/<int:id>', login_required(views.EditRepair),
+         name='edit_repair'),
     path('repairs/create_repair/', login_required(views.CreateRepair),
          name='create_repair'),
     path('repairs/', login_required(views.Repairs), name='repairs'),
