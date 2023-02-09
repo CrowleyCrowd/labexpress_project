@@ -14,10 +14,10 @@
 </div>
 <hr style="color:transparent">
 <div>
+
   <table class="table" style="background-color: white;">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Identificación</th>
         <th scope="col">Nombre</th>
         <th scope="col">Apellido</th>
@@ -31,8 +31,7 @@
     <tbody>
       {%  for customer in customers %}
       <tr>
-        <th scope="row" >{{ customer.id }}</th>
-        <td>{{ customer.document }}</td>
+        <th scope="row" >{{ customer.document }}</th>
         <td>{{ customer.firstname }}</td>
         <td>{{ customer.lastname }}</td>
         <td>{{ customer.address }}</td>
@@ -44,5 +43,6 @@
       {% endfor %}
     </tbody>
   </table>
+
 </div>
 {% endblock %}

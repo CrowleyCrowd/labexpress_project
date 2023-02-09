@@ -11,6 +11,36 @@
       <button class="w-20 btn btn-md btn-primary" style="background-color: black; border-color: #1d1d1b;">Nueva Reparación</button>
     </a>
   </div>
-  <hr style="color:transparent">
+</div>
+<hr style="color:transparent">
+<div>
+
+  <table class="table" style="background-color: white;">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Órden</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Equipo</th>
+        <th scope="col">Recepción</th>
+        <th scope="col">Responsable</th>
+        <th scope="col">Entrega</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%  for repair in repairs %}
+      <tr>
+        <th scope="row" >{{ repair.id }}</th>
+        <td>{{ repair.customer }}</td>
+        <td>{{ repair.serial }}</td>
+        <td>{{ repair.date_reception }}</td>
+        <td>{{ repair.assignee }}</td>
+        <td>{{ repair.date_repair }}</td>
+        <td><button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Editar</button></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
 </div>
 {% endblock %}
