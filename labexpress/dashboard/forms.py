@@ -2,8 +2,9 @@ from django.forms import ModelForm
 from django import forms
 import datetime
 import time
-from .models import Customer, Repair
+from .models import Customer, Repair, Device
 from django.contrib.auth.models import User
+
 
 class UserForm(forms.ModelForm):
 
@@ -23,7 +24,8 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username', 'first_name','last_name','email', 'password','date_joined','is_staff','is_superuser','is_active']
+        fields = ['username', 'first_name', 'last_name', 'email',
+                  'password', 'date_joined', 'is_staff', 'is_superuser', 'is_active']
 
 
 class CustomerForm (ModelForm):
@@ -32,6 +34,15 @@ class CustomerForm (ModelForm):
         model = Customer
         fields = ['document', 'firstname', 'lastname', 'address', 'phone',
                   'cellphone', 'email']
+        widgets = {
+            'document': forms.TextInput(attrs={'class':'form-control m-auto','placeholder': 'Ingresa tu número de identificación' }),
+            'firstname': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu nombre'}),
+            'lastname': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu apellido'}),
+            'address': forms.Textarea(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu dirección ','rows':4}),
+            'phone': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu teléfono'}),
+            'cellphone': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu celular'}),
+            'email': forms.TextInput(attrs={'class': 'form-control m-auto','placeholder': 'Ingresa tu email'})
+        }
 
 
 class RepairForm (forms.ModelForm):
@@ -54,3 +65,9 @@ class RepairForm (forms.ModelForm):
         model = Repair
         fields = ['creator', 'customer', 'serial', 'date_reception', 'time_reception',
                   'details', 'observations', 'assignee', 'date_repair', 'time_repair']
+
+
+class DeviceForm (forms.ModelForm):
+    class Meta:
+        model = Device
+        fields = ['serial', 'category', 'brand', 'product']
