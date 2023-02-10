@@ -22,7 +22,7 @@
         </a>
       </div>
       <hr style="color:transparent">
-      <form method="post">
+      <form method="post" class="card card-body">
         {% csrf_token %}
         {% if error %}
         <h2>{{ error }}</h2>

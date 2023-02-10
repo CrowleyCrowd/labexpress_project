@@ -8,17 +8,9 @@
 
 {% block content %}
   {{ error }}
-  <main>
-
-     <div class="row g-5">
-      <div class="col-md-7 col-lg-8">
-        <div>
-          <h4 class="mb-3">Registro de Usuario</h4>
-        </div> 
-         <hr style="color:transparent">
-
-        
-        <hr style="color:transparent">
+  <main >
+    <div  >
+       <section class="col-md-6 offset-md-2  mt-4">
         <form method="post">
           {% csrf_token %}
           {% if error %}
@@ -28,46 +20,55 @@
             <div class="col-md-4"></div>
             <div class="col-md-6">
               <div>
-              <label for="username" class="form-label">Nombre de Usuario</label>
-              {{ user_form.username }}
-              <label for="first_name" class="form-label">Nombre</label>
-              {{ user_form.fisrt_name }}              
-              <label for="last_name" class="form-label">Apellido</label>
-              {{ user_form.last_name }}
-              <label for="email" class="form-label">Correo</label>
-              {{ user_form.email }}
-              <label for="password" class="form-label">Constraseña</label>
-              {{ user_form.password }}
-              <label for="date_joined" class="form-label">Fecha de Registro</label>
-              {{ user_form.date_joined }}
-              <br>
-              <label for="is_staff" class="form-label">Staff</label>
-              {{ user_form.is_staff }}
-              <br>
-              <label for="is_superuser" class="form-label">Super Usuario</label>
-              {{ user_form.is_superuser }}
-              <br>
-              <label for="is_active" class="form-label">Activo</label>
-              {{ user_form.is_active }}
-            </div>
-            </div>
-
+                <div>
+                  <label for="username" class="form-label">Nombre de Usuario</label>
+                  {{ user_form.username }}
+                </div>
+                <div>
+                  <label for="first_name" class="form-label">Nombre</label>          
+                  {{ user_form.first_name }}
+                </div>
+                <div>
+                  <label for="last_name" class="form-label">Apellido</label>
+                  {{ user_form.last_name }}
+                </div>
+                <div>
+                  <label for="email" class="form-label">Correo</label>
+                  {{ user_form.email }}
+                </div>
+                <div>
+                  <label for="password" class="form-label">Constraseña</label>
+                  {{ user_form.password }}
+                </div>
+                <div>
+                  <label for="date_joined" class="form-label">Fecha de Registro</label>
+                  {{ user_form.date_joined }}
+                </div>
+                <div>
+                  <label for="is_staff" class="form-label">Staff</label>
+                  {{ user_form.is_staff }}
+                </div>
+                <div>
+                  <label for="is_superuser" class="form-label">Super Usuario</label>
+                  {{ user_form.is_superuser }}
+                </div>
+                <div>
+                  <label for="is_active" class="form-label">Activo</label>
+                  {{ user_form.is_active }}
+                </div>
           {% endif %}
           <hr style="color:transparent" />
           <div class="col-md-4"></div>
-          <div class="col-md-4">
+          <div class="col-md-4"></div>
           <div>
-            <button class="w-20 btn btn-sm btn-primary" type="submit"
-              style="background-color: black; border-color: #1d1d1b;">Guardar</button>
-          <a href="{% url 'users' %}">
-              <button class="w-20 btn btn-sm btn-primary"
-                  style="background-color: black; border-color: #1d1d1b;">Cancelar</button>
-          </a>
+            <button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Guardar</button>
+            <a href="{% url 'users' %}">
+              <button class="w-20 btn btn-sm btn-primary" style="background-color: black; border-color: #1d1d1b;">Cancelar</button>
+            </a>
           </div>
-          <hr style="color:transparent">
-      </div>
+          <hr style="color:transparent"></div>
         </form>
       </div>
-    </div> 
+    </div>
   </main>
 {% endblock %}
