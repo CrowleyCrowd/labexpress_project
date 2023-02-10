@@ -11,6 +11,12 @@
   </div>
   <hr style="color:transparent">
   <div>
+    <a href="{% url 'repairs' %}">
+      <button class="w-20 btn btn-sm btn-primary" style="background-color: black; border-color: #1d1d1b;">Cancelar</button>
+    </a>
+  </div>
+  <hr style="color:transparent">
+  <div>
     <form method="post">
       {% csrf_token %}
       <table class="table" style="background-color: white;">
@@ -33,11 +39,7 @@
             <td>
               <button class="w-20 btn btn-sm btn-primary" type="submit" style="background-color: black; border-color: #1d1d1b;">Eliminar</button>
             </td>
-            <td>
-              <a href="{% url 'repairs' %}">
-                <button class="w-20 btn btn-sm btn-primary" style="background-color: black; border-color: #1d1d1b;">Cancelar</button>
-              </a>
-            </td>        
+                    
           </tr>
         </tbody>
       </table>
