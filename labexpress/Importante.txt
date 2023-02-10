@@ -1,0 +1,8 @@
+Listado de comoandos Django
+
+Inicializar/Docker: docker-compose up
+Parar Docker: docker-compose stop
+Eliminar Instancias Docker: docker-compose down
+Crear Scripts Modelos: docker-compose exec web python manage.py makemigrations
+Crear Tablas en Postgres: docker-compose exec web python manage.py migrate
+Crear Superusuario DJANGO: docker-compose exec web python manage.py createsuperuser

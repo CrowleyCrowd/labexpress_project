@@ -1,0 +1,56 @@
+{% extends "./base_index.html" %}
+
+<title>{% block title %}LAB-EXPRESS | Reparaciones{% endblock %}</title>
+
+{% block content %}
+<main>
+  <div>
+    <h1>Resumen de Reparaciones</h1>
+    <hr style="color:transparent">
+    <div>
+      <a href="{% url 'create_repair'%}">
+        <button class="w-20 btn btn-md btn-primary" style="background-color: black; border-color: #1d1d1b;">Nueva Reparación</button>
+      </a>
+    </div>
+  </div>
+  <hr style="color:transparent">
+  <div>
+    <table class="table" style="background-color: white;">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Órden</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Equipo</th>
+          <th scope="col">Recepción</th>
+          <th scope="col">Responsable</th>
+          <th scope="col">Entrega</th>
+          <th scope="col">Acciones</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {%  for repair in repairs %}
+        <tr>
+          <th scope="row" >{{ repair.id }}</th>
+          <td>{{ repair.customer }}</td>
+          <td>{{ repair.serial }}</td>
+          <td>{{ repair.date_reception }}</td>
+          <td>{{ repair.assignee }}</td>
+          <td>{{ repair.date_repair }}</td>
+          <td>
+            <a href="{% url 'edit_repair' repair.id %}">
+              <button class="w-20 btn btn-sm btn-primary" style="background-color: black; border-color: #1d1d1b;">Editar</button>
+            </a>
+          </td> 
+          <td>
+            <a href="{% url 'delete_repair' repair.id %}">
+              <button class="w-20 btn btn-sm btn-primary" style="background-color: black; border-color: #1d1d1b;">Eliminar</button>
+            </a>
+          </td>        
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</main>
+{% endblock %}
