@@ -2,16 +2,34 @@ from django.forms import ModelForm
 from django import forms
 import datetime
 import time
-from .models import Customer, Repair
+from .models import Customer, Repair, Device
 from django.contrib.auth.models import User
 
+
 class UserForm(forms.ModelForm):
+
+    username = forms.CharField(widget=forms.TextInput(
+        attrs={'type': 'textarea', 'class': 'form-control', 'style': 'width:500px; height:40px'}))
+    first_name = forms.CharField(widget=forms.TextInput(
+        attrs={'type': 'textarea', 'class': 'form-control', 'style': 'width:500px; height:40px'}))
+    last_name = forms.CharField(widget=forms.TextInput(
+        attrs={'type': 'textarea', 'class': 'form-control', 'style': 'width:500px; height:40px'}))
+    email = forms.CharField(widget=forms.TextInput(
+        attrs={'type': 'textarea', 'class': 'form-control', 'style': 'width:500px; height:40px'}))
+    password = forms.CharField(widget=forms.TextInput(
+        attrs={'type': 'password', 'class': 'form-control', 'style': 'width:500px; height:40px'}))
+    date_joined = forms.DateField(widget=forms.TextInput(
+        attrs={'type': 'date', 'class': 'form-control', 'style': 'width:150px'}))
+    
+
     class Meta:
         model = User
-        fields = ['username', 'first_name','last_name','email', 'password','date_joined','is_staff','is_superuser','is_active']
+        fields = ['username', 'first_name', 'last_name', 'email',
+                  'password', 'date_joined', 'is_staff', 'is_superuser', 'is_active']
 
 
 class CustomerForm (ModelForm):
+    
     class Meta:
         model = Customer
         fields = ['document', 'firstname', 'lastname', 'address', 'phone',
@@ -47,3 +65,9 @@ class RepairForm (forms.ModelForm):
         model = Repair
         fields = ['creator', 'customer', 'serial', 'date_reception', 'time_reception',
                   'details', 'observations', 'assignee', 'date_repair', 'time_repair']
+
+
+class DeviceForm (forms.ModelForm):
+    class Meta:
+        model = Device
+        fields = ['serial', 'category', 'brand', 'product']
